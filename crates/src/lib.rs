@@ -1998,6 +1998,14 @@ mod tests {
         });
     }
 
+#[cfg(feature = "client")]
+use socket2::Socket;
+
+#[cfg(feature = "program")]
+pub fn some_onchain_function() {
+    // On-chain logic
+}
+    
     #[tokio::test]
     #[cfg(feature = "rpc_tests")]
     async fn test_marketmap_subscribe() {
